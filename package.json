@@ -1,0 +1,33 @@
+{
+  "name": "notes-xpress",
+  "version": "1.0.0",
+  "description": "This application has been developed for dynamic note taking leveraging Express.js and node.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "author": "Peter Smith (peteCodes4u)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peteCodes4u/NotesXpress.git"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "Notes",
+    "javascript",
+    "Render"
+  ],
+  "bugs": {
+    "url": "https://github.com/peteCodes4u/NotesXpress/issues"
+  },
+  "homepage": "https://github.com/peteCodes4u/NotesXpress#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
