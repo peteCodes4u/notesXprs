@@ -1,5 +1,5 @@
 {
-  "name": "notes-xpress",
+  "name": "notesxprs",
   "version": "1.0.0",
   "description": "This application has been developed for dynamic note taking leveraging Express.js and node.js.",
   "main": "server.js",
