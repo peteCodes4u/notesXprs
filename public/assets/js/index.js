@@ -1,7 +1,3 @@
-const getStartedBtn = document.getElementById('getStartedBtn')
-// establish fs for saving json db files
-const fs = require('fs');
-
 let noteForm;
 let noteTitle;
 let noteText;
@@ -38,9 +34,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json'
     }
-    
-  })
-
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -198,6 +192,3 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
-
-
-

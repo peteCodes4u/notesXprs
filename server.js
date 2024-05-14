@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const fs = require('fs');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 
 
-const notesData = require('./db/db.json')
+// const notesData = require('./db/db.json')
 
 
 // terminal colors for messages
@@ -32,11 +32,28 @@ app.get("/notes", (req, res) => {
 })
 
 // retrieve notes data
+
 app.get('/api/notes', (req, res) => {
-    res.json(notesData);
+
+const rawNoteData = fs.readFileSync('./db/db.json', 'utf-8');
+const parsedNotes = JSON.parse(rawNoteData);
+console.log(rawNoteData);
+
+    res.json(parsedNotes);
 });
 
-// Update note
+// create note (post)
+app.post('/api/notes', (req, res) => {
+
+// step 1 get the new note in some variable
+// step 2 add uuid to new note 
+// read the db json and parse
+// push to new array in memory > json.strigify
+// save db.json file
+
+
+});
+
 // Delete note
 
 // express functional code
