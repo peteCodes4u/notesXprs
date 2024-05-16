@@ -1,0 +1,14 @@
+#nav {
+  background-image: linear-gradient(to right, #3ac0d5, #2a04d7)
+}
+
+body {
+  background-image: url("/assets/images/notes-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#note {
+  background-image: url("/assets/images/notes-bg.png");
+  background-repeat: no-repeat;
+}
