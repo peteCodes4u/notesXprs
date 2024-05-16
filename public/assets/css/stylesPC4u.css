@@ -1,0 +1,8 @@
+#nav {
+  background-image: linear-gradient(to right, #3ac0d5, #b94ea0)
+}
+
+body {
+  background-image: url("/public/assets/images/notes-bg.png")
+  /* background-image: linear-gradient(to right, #3ac0d5, #b94ea0) */
+}
