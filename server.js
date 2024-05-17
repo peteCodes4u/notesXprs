@@ -1,15 +1,16 @@
 const fs = require('fs');
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 const app = express();
 app.use(express.static('public'));
-const { json } = require('body-parser');
+// const { json } = require('body-parser');
 const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 
 
-const notesData = require('./db/db.json')
+// const notesData = require('./db/db.json')
+
 
 const nXprsNoteIdGenerator = function () {
 

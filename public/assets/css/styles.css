@@ -5,9 +5,30 @@ body {
   padding: 0;
 }
 
-.bg-info {
-  background-image: linear-gradient(to right, #3ac0d5, #b94ea0)
+/* PC4U Style overide */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+#nav {
+  background-image: linear-gradient(to right, #3ac0d5, #2a04d7)
+}
+
+body {
+  background-image: url("/assets/images/notes-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#note {
+  background-image: url("/assets/images/notes-bg.png");
+  background-repeat: no-repeat;
+}
+
+/* PC4U Style overide */
+
 
 .save-note, .new-note, .clear-btn {
   display: none;
