@@ -6,7 +6,8 @@ body {
 }
 
 /* PC4U Style overide */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -30,7 +31,9 @@ body {
 /* PC4U Style overide */
 
 
-.save-note, .new-note, .clear-btn {
+.save-note,
+.new-note,
+.clear-btn {
   display: none;
 }
 
