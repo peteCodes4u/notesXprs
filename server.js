@@ -1,24 +1,30 @@
+// enable file system for db read/write
 const fs = require('fs');
+
+// enable express to leverage server features
 const express = require('express');
-// const path = require('path');
+
+// establish app for referencing express server
 const app = express();
+
+// enable access for public folder
 app.use(express.static('public'));
-// const { json } = require('body-parser');
+
+// establish env port with flexibility
 const PORT = process.env.PORT || 3001;
+
+// enable json for db read/write
 app.use(express.json());
 
-
-
-// const notesData = require('./db/db.json')
-
-
+// function for generating note id's
 const nXprsNoteIdGenerator = function () {
 
-
+    // random alha numeric string 
     num = (Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1));
 
+    // id for each note added to db 
     nxprs_id = 'nxprs-' + num
 
     return nxprs_id
@@ -29,7 +35,6 @@ const green = '\x1b[32m%s\x1b[0m';
 const red = '\x1b[31m%s\x1b[0m';
 const yellow = '\x1b[33m%s\x1b[0m';
 
-// Read note
 // retrieve main page
 app.get('/', (req, res) => {
 
@@ -47,14 +52,12 @@ app.get("/notes", (req, res) => {
     res.status(200);
 });
 
-// retrieve notes data
-
+// retrieve notes data (read)
 app.get('/api/notes', (req, res) => {
 
     const rawNoteData = fs.readFileSync('./db/db.json', 'utf-8');
     const parsedNotes = JSON.parse(rawNoteData);
 
-    
     res.json(parsedNotes);
     res.status(200);
 });
@@ -106,21 +109,21 @@ app.delete('/api/notes/:id', async (req, res) => {
 
         // read existing note data
         const rawNoteData = fs.readFileSync('./db/db.json', 'utf-8');
-        
+
         // initialize notes data to memory
         let notes = JSON.parse(rawNoteData);
 
         // find the index of the note with the specified id
         const noteIndex = notes.findIndex(note => note.id === noteId);
-        
+
         if (noteIndex !== -1) {
 
             // eliminate the note
             notes.splice(noteIndex, 1)
-            
+
             // write the updated notes data to the db.json file
             await fs.promises.writeFile('./db/db.json', JSON.stringify(notes), 'utf-8');
-            
+
             res.status(200).json({ message: 'Note deleted successfully' });
             console.log(red, `🗑️ ${noteId} Note successfully deleted from the database!`);
         } else {
@@ -132,12 +135,6 @@ app.delete('/api/notes/:id', async (req, res) => {
         res.status(500).json({ message: 'oops something went wrong the note has NOT been deleted' });
     }
 });
-
-
-
-// express functional code
-app.use(express.static("public"));
-app.use(express.json())
 
 app.listen(PORT, () => {
     console.log(green, `😎 Server is running on port ${PORT}`)
