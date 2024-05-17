@@ -17,6 +17,8 @@ In order to use this application install node.js and  npm. If node.js is already
 ## Usage Information
 The intended usage for this application is to store plain text notes for thought organization and keeping track of tasks.
 
+![](./public/assets/images/notesXprs-Demo.gif)
+
 ## License
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
